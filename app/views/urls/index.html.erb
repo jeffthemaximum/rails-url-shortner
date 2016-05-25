@@ -1,0 +1,17 @@
+<h1>
+    hello from url shortner this is jeff speaking
+</h1>
+
+<p>
+    you know the drill. enter a long url, get a short url. use the form below.
+</p>
+
+<%= form_for @url do |f| %>
+    <p>
+        <%= f.label :url %> <br>
+        <%= f.url_field :url %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
