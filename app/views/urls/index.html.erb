@@ -1,17 +1,24 @@
-<h1>
-    hello from url shortner this is jeff speaking
-</h1>
+<div class="container">
+    
+    <% provide(:title, "Home") %>
 
-<p>
-    you know the drill. enter a long url, get a short url. use the form below.
-</p>
+    <h1 class="center">
+        hello from url shortner this is jeff speaking
+    </h1>
 
-<%= form_for @url do |f| %>
     <p>
-        <%= f.label :url %> <br>
-        <%= f.url_field :url %>
+        you know the drill. enter a long url, get a short url. use the form below.
     </p>
-    <p>
-        <%= f.submit %>
-    </p>
-<% end %>
+
+    <%= form_for @url do |f| %>
+        <p>
+            <%= f.label :url %> <br>
+            <%= f.url_field :url %>
+        </p>
+        <p>
+            <%= f.submit %>
+        </p>
+    <% end %>
+
+</div>
+

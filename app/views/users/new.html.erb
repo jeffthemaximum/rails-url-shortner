@@ -1,2 +1,8 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, "New user") %>
+<div class="container">
+    <h1>Signup for this sweet URL shortner</h1>
+    <p>It'll let you keep track of URL's you've shortened and hitcount, too.</p>
+
+    <%= render 'form' %>
+</div>
+

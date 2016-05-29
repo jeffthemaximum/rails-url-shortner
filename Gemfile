@@ -46,5 +46,6 @@ group :development do
   gem 'pry'
   gem 'pry-byebug'
   gem 'bcrypt',               '3.1.7'
+  gem 'materialize-sass'
 end
 

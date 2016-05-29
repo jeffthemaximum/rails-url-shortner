@@ -1,7 +1,10 @@
-<p>
-    <%= @url.url %>
-</p>
+<% provide(:title, "Result") %>
+<div class="container">
+    <p>
+        <%= @url.url %>
+    </p>
 
-<p>
-    <%= link_to @base_url + "/" + @url.key, @base_url + "/" + @url.key %>
-</p>
+    <p>
+        <%= link_to @base_url + "/" + @url.key, @base_url + "/" + @url.key %>
+    </p>
+</div>
