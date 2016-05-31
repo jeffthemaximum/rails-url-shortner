@@ -1,6 +1,17 @@
 class Url < ActiveRecord::Base
     before_create :make_key
 
+    belongs_to :user
+
+    def hit
+        if self.hits.is_a? Numeric
+            self.hits += 1
+        else
+            self.hits = 1
+        end
+        self.save
+    end
+
     private
         def make_key
             self.key = random_str(6)

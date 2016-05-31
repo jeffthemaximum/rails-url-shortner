@@ -6,7 +6,14 @@ class UrlsController < ApplicationController
 
     def create
         @url = Url.new(url_params)
+
+        # if user is logged in
+        if logged_in?
+            @url.user_id = @current_user.id
+        end
+
         @url.save
+
         redirect_to @url
     end
 
@@ -17,6 +24,7 @@ class UrlsController < ApplicationController
 
     def redirect
         url = Url.find_by! key: params[:key]
+        url.hit
         redirect_to url.url
     end
 

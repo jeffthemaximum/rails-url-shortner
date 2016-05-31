@@ -1,0 +1,18 @@
+<% if @user.urls != [] %>
+    <ul class="collapsible popout" data-collapsible="accordion">
+        <% @user.urls.each do |url| %>
+            <li>
+                <div class="collapsible-header"><%= url.key %></div>
+                <div class="collapsible-body">
+                    <p><b>Short: </b><%= link_to @base_url + "/" + url.key, @base_url + "/" + url.key %></p>
+                    <p><b>Original: </b><%= url.url %></p>
+                    <p><b>Hits: </b><%= url.hits %></p>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+<% else %>
+    <p>
+        You haven't created any shortened URLses yet :(
+    </p>
+<% end %>
