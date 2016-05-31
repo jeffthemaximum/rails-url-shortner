@@ -1,0 +1,10 @@
+<%= form_for @url do |f| %>
+    <%= render 'shared/url_form_errors' %>
+    <div class="input-field col s12">
+        <%= f.url_field :url %>
+        <%= f.label :url %>
+    </div>
+    <div class="input-field col s12">
+        <%= f.submit 'Submit', class: 'waves-effect waves-light btn' %>
+    </div>
+<% end %>

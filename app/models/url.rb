@@ -1,7 +1,14 @@
 class Url < ActiveRecord::Base
     before_create :make_key
-
     belongs_to :user
+    validate :valid_url
+
+    def valid_url
+        url = URI.parse(self.url) rescue false
+        if !url.kind_of?(URI::HTTP) && !url.kind_of?(URI::HTTPS)
+            errors.add(:url, "invalid url")
+        end
+    end
 
     def hit
         if self.hits.is_a? Numeric

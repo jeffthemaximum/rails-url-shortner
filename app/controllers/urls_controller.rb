@@ -12,9 +12,11 @@ class UrlsController < ApplicationController
             @url.user_id = @current_user.id
         end
 
-        @url.save
-
-        redirect_to @url
+        if @url.save
+            redirect_to @url
+        else
+            render 'index'
+        end
     end
 
     def show

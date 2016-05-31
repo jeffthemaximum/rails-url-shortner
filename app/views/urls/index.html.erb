@@ -10,16 +10,7 @@
         you know the drill. enter a long url, get a short url. use the form below.
     </p>
 
-    <%= form_for @url do |f| %>
-        <div class="input-field col s12">
-            
-            <%= f.url_field :url %>
-            <%= f.label :url %>
-        </div>
-        <div class="input-field col s12">
-            <%= f.submit 'Submit', class: 'waves-effect waves-light btn' %>
-        </div>
-    <% end %>
+    <%= render 'form' %>
 
 </div>
 
