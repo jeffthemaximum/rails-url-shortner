@@ -11,13 +11,14 @@
     </p>
 
     <%= form_for @url do |f| %>
-        <p>
-            <%= f.label :url %> <br>
+        <div class="input-field col s12">
+            
             <%= f.url_field :url %>
-        </p>
-        <p>
-            <%= f.submit %>
-        </p>
+            <%= f.label :url %>
+        </div>
+        <div class="input-field col s12">
+            <%= f.submit 'Submit', class: 'waves-effect waves-light btn' %>
+        </div>
     <% end %>
 
 </div>

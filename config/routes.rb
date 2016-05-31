@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   resources :urls
   resources :users
   
@@ -9,7 +11,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'urls#index'
 
-  get 'signup'  => 'users#new'
+  get 'signup'  => 'users#create'
+  match 'signup'  => 'users#create', :via => :post
+  match 'signup'  => 'users#create', :via => :get
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+
   get '/:key' => 'urls#redirect', :as => :redirect_url
 
 

@@ -1,16 +1,19 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
 
   def create
-    @user = User.create(new_user_params)
-    if @user.valid?
-        puts 'valid'
-        redirect_to urls_path
+    if request.post?
+      @user = User.create(new_user_params)
+        if @user.valid?
+          flash[:success] = "You've signed up!"
+          log_in(@user)
+          remember(@user)
+          redirect_to urls_path
+      else
+          render 'new'
+      end
     else
-        puts 'invalid'
-        render new_user_path
+      @user = User.new
+      render 'new'
     end
   end
 

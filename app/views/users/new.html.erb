@@ -1,6 +1,7 @@
 <% provide(:title, "New user") %>
 <div class="container">
     <h1>Signup for this sweet URL shortner</h1>
+    <p>Already a member? <%= link_to 'Log in here', login_path %></p>
     <p>It'll let you keep track of URL's you've shortened and hitcount, too.</p>
 
     <%= render 'form' %>

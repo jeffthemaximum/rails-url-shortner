@@ -1,21 +1,24 @@
-<%= form_for @user do |f| %>
-    <p>
-        <%= f.label :email %> <br>
+<%= form_for @user, url: signup_path(@user) do |f| %>
+    <%= render 'shared/form_errors' %>
+    <div class="input-field col s12">
         <%= f.email_field :email %>
-    </p>
-    <p>
-        <%= f.label :name %> <br>
+        <%= f.label :email %>
+    </div>
+    <div class="input-field col s12">
         <%= f.text_field :name %>
-    </p>
-    <p>
-        <%= f.label :password %> <br>
+        <%= f.label :name %>
+    </div>
+    <div class="input-field col s12">
+        
         <%= f.password_field :password %>
-    </p>
-    <p>
-        <%= f.label :password_confirmation %> <br>
+        <%= f.label :password %>
+    </div>
+    <div class="input-field col s12">
+        
         <%= f.password_field :password_confirmation %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
+        <%= f.label :password_confirmation %>
+    </div>
+    <div class="input-field col s12">
+        <%= f.submit 'Submit', class: 'waves-effect waves-light btn' %>
+    </div>
 <% end %>
